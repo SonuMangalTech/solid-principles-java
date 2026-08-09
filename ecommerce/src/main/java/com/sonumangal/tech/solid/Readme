@@ -1,0 +1,7 @@
+| Principle                     | Applied In                                                                                                                               |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **S** - Single Responsibility | `OrderService`, `PaymentService`, `InventoryService`, `NotificationService`, `OrderRepository` each has one responsibility.              |
+| **O** - Open/Closed           | `Discount` interface with `PremiumDiscount`, `CorporateDiscount`, `EmployeeDiscount`. Add new discounts without modifying existing code. |
+| **L** - Liskov Substitution   | Any `Payment` implementation (`CreditCardPayment`, `GiftCardPayment`, `UpiPayment`) can replace another without breaking `OrderService`. |
+| **I** - Interface Segregation | `Payment` and `Refundable` are separate interfaces. Classes implement only what they need.                                               |
+| **D** - Dependency Inversion  | `OrderService` depends on `Discount`, `Payment`, and `OrderRepository` interfaces instead of concrete implementations.                   |
